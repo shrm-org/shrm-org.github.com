@@ -1,0 +1,370 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <meta name="author" content="A Presentation to the SHRM India Team" />
+  <title>Introducing Sherman</title>
+  <!-- configuration parameters -->
+  <meta name="defaultView" content="slideshow" />
+  <meta name="controlVis" content="hidden" />
+  <!-- style sheet links -->
+  <link rel="stylesheet" href="style/theme/slides.css" type="text/css" media="projection" id="slideProj" />
+  <link rel="stylesheet" href="style/theme/outline.css" type="text/css" media="screen" id="outlineStyle" />
+  <link rel="stylesheet" href="style/theme/print.css" type="text/css" media="print" id="slidePrint" />
+  <link rel="stylesheet" href="style/theme/opera.css" type="text/css" media="projection" id="operaFix" />
+  <!-- S5 JS -->
+  <script src="style/theme/slides.js" type="text/javascript"></script>
+</head>
+<body>
+<div class="layout">
+<div id="controls"></div>
+<div id="currentSlide"></div>
+<div id="header"></div>
+<div id="footer">
+  <h1>August 2012</h1>
+  <h2>Introducing Sherman</h2>
+</div>
+</div>
+<div class="presentation">
+<div class="titleslide slide">
+  <h1>Introducing Sherman</h1>
+  <h2>A Presentation to the SHRM India Team</h2>
+  <h3>August 2012</h3>
+</div>
+<div class="section slide level1" id="meet-sherman.">
+<h1>Meet Sherman.</h1>
+<div style="text-align:center;margin-bottom:2em;">
+<img src="img/created/sherman-logo-transparent-368x95.png" />
+</div>
+
+<div style="text-align:center">
+Sherman is our next generation content management system.
+</div>
+
+</div>
+<div class="section slide level1" id="shermans-primary-objectives">
+<h1>Sherman's Primary Objectives</h1>
+<ol style="list-style-type: decimal">
+<li><p>Single-Source Publishing</p></li>
+<li><p>Mobile-Native</p></li>
+<li><p>Integration Platform</p></li>
+</ol>
+</div>
+<div class="section slide level1" id="current-state-of-content-management-at-shrm">
+<h1>Current State of Content Management at SHRM</h1>
+<ul>
+<li>Mostly Sharepoint.</li>
+<li>Also Drupal.</li>
+<li>And WordPress.</li>
+<li>And custom frameworks.</li>
+<li>And static sites.</li>
+</ul>
+</div>
+<div class="section slide level1" id="current-state-technical-challenges">
+<h1>Current State: Technical Challenges</h1>
+<ul>
+<li><p><strong>Rigidly presentational markup.</strong> (Only one rendering of each document is possible.)</p></li>
+<li><p><strong>Content production requires extraordinary manual effort.</strong> (Content sharing and reuse is driven by cut-and-paste. RSS feeds and email newsletters are manually created. Document workflow and revision tracking happens manually.)</p></li>
+<li><p><strong>Web design and production requires extraordinary manual effort.</strong> (Most documents require manual cleanup on import. Design standards can only be enforced socially. Design changes must be independently and manually applied to each document.)</p></li>
+</ul>
+</div>
+<div class="section slide level1" id="current-state-technical-challenges-cont.">
+<h1>Current State: Technical Challenges (cont.)</h1>
+<ul>
+<li><p><strong>Limited meta-data.</strong> (Can't tell which documents link to this one. Can't tell whether or where a given image or media is used. Can't embargo or &quot;de-publish&quot; a document. Can't identify when a document was last updated.)</p></li>
+<li><p><strong>Arbitrary and obtrusive technical constraints.</strong> (Arbitrary limit on the number of documents per section. Visual design is constrained by template architecture. Control over the structure and content of generated HTML is limited. Cannot easily import or export documents and templates between environments.)</p></li>
+<li><p><strong>Incomplete.</strong> (Images, audio, video, PDF and other media assets are managed outside the system. Many micro-sites and sub-sites are managed outside the system.)</p></li>
+</ul>
+</div>
+<div class="section slide level1" id="current-state-social-challenges">
+<h1>Current State: Social Challenges</h1>
+<ul>
+<li><p><strong>Diverse contributors shoehorned into a one-size-fits-all interface.</strong> (Product landing/conversion pages, breaking news, magazine content, research reports, toolkits, Q&amp;A, help pages, etc. all share the same editorial interface.)</p></li>
+<li><p><strong>Power users find the editorial interface awkward.</strong> They avoid it whenever they can. (The entire editorial pipeline exists <em>outside</em> the CMS. Content is only imported into the CMS for publication.)</p></li>
+<li><p><strong>Casual users find the editorial interface difficult to understand.</strong> They rely on web-production staff to import and maintain content.</p></li>
+</ul>
+</div>
+<div class="section slide level1" id="current-state-social-challenges-cont.">
+<h1>Current State: Social Challenges (cont.)</h1>
+<ul>
+<li><strong>The most recent CMS replacement was <em>painful</em> for content contributors.</strong> (It required signficant and unplanned support from the content creators. The migration degraded the quality of their content--introducing many errors and even more broken links. The deployment created an enormous disruption to their work, and stretched out over months due to purely technical issues.) The clients' initial POV was skepticm and fear.</li>
+</ul>
+</div>
+<div class="section slide level1" id="shermans-architectural-foundation">
+<h1>Sherman's Architectural Foundation</h1>
+</div>
+<div class="section slide level1" id="shermans-architectural-foundation-1">
+<h1>Sherman's Architectural Foundation</h1>
+<p>Sherman uses <strong>a RESTful Service Oriented Architecture</strong> (SOA).</p>
+<p>(Don't panic. We'll explain what that means.)</p>
+</div>
+<div class="section slide level1" id="service-oriented-architecture">
+<h1>Service Oriented Architecture?</h1>
+<ul>
+<li><p>A <strong>federation of subsystems</strong>, each with a specific role and set of responsibilities.</p></li>
+<li><p>Each subsystem is <strong>atomic</strong>, providing a complete &quot;service&quot; in and of itself.</p></li>
+<li><p>Each subsystem is <strong>independent</strong>, capable of being used in isolation (or with non-Sherman components).</p></li>
+<li><p>Each subsystem is <strong>integrated</strong>, designed to work in concert to deliver a comprehensive content management solution.</p></li>
+</ul>
+</div>
+<div class="section slide level1" id="restful">
+<h1>RESTful?</h1>
+<ul>
+<li><p><strong>REST = Representational State Transfer</strong>, a pattern for the design of web service APIs based on the architecture of the World Wide Web itself.</p></li>
+<li><p><strong>Question:</strong> What has allowed the WWW to become such a massively scalable, globally distributed, robust, diverse, resilant and flexible system?</p></li>
+<li><p><strong>Answer:</strong> The use of a (1) uniform, (2) stateless, (3) cachable, (4) layered, (5) client–server architecture.</p></li>
+</ul>
+</div>
+<div class="section slide level1" id="rest-computers-should-use-the-web-the-way-people-use-the-web.">
+<h1>REST: Computers should use the web the way <em>people</em> use the web.</h1>
+<ul>
+<li><p>People browse a <em>web site</em> by (1) starting at the <em>homepage</em>, (2) discovering <em>links</em> that point to other <em>pages</em>, (3) following those links to <em>view content</em>, and (4) occassionally using <em>web forms</em> to create new or modify existing pages.</p></li>
+<li><p>RESTful clients use a <em>web service</em> by (1) starting at a known <em>&quot;entry point&quot;</em>, (2) discovering <em>URLs</em> that point to other <em>resources</em> , (3) following those URLs to <em>fetch data</em> and (4) occassionally using <em>HTTP methods</em> to create new or modify existing resources.</p></li>
+</ul>
+</div>
+<div class="section slide level1" id="why-rest">
+<h1>Why REST?</h1>
+<ol style="list-style-type: decimal">
+<li><p>The REST architetural style confers the same technical advantages to web services that it did to the web itself.</p></li>
+<li><p>RESTful web services can leverage the existing web ecosystem (clients, servers, tools, monitors, hosts, etc.).</p></li>
+</ol>
+</div>
+<div class="section slide level1" id="shermans-primary-services">
+<h1>Sherman's Primary Services</h1>
+<p>Sherman decomposes content management into three major functions:</p>
+<ol style="list-style-type: decimal">
+<li><p><strong>Content Display Service</strong> - user-facing; responsible for the final rendering and delivery of content</p></li>
+<li><p><strong>Content Management Service</strong> - contributor-facing; responsible for helping capture, create, organize, maintain and publish content</p></li>
+<li><p><strong>Content Repository Service</strong> - intermediary between content management and content display; responsible for housing and distributing published content</p></li>
+</ol>
+</div>
+<div class="section slide level1" id="shermans-primary-services-1">
+<h1>Sherman's Primary Services</h1>
+<div style="text-align:center">
+<img src="img/created/2012-07-sherman-architectural-foundations-img-cc-cm-cr-cd-eu.png" />
+</div>
+
+</div>
+<div class="section slide level1" id="shermans-primary-services-2">
+<h1>Sherman's Primary Services</h1>
+<div style="text-align:center">
+<img src="img/created/sherman-interoperates-via-rest-740x196.png" />
+</div>
+
+<p>These services interoperate across RESTful web service APIs.</p>
+</div>
+<div class="section slide level1" id="different-interfaces-for-different-needs">
+<h1>Different Interfaces for Different Needs</h1>
+<p>To deliver content from diverse contributors to diverse consumers, Sherman provides multiple content management and content display interfaces.</p>
+<div style="text-align:center">
+<img src="img/created/2012-07-sherman-architectural-foundations-img-cm-cr-cd-uml-components.png" />
+</div>
+
+<p>Each CMA (content management application) and CDA (content display application) is backed by a centralized, core management or display service.</p>
+</div>
+<div class="section slide level1" id="technical-components">
+<h1>Technical Components</h1>
+</div>
+<div class="section slide level1" id="shermans-structure-isnt-that-different-from-sharepoints.">
+<h1>Sherman's structure isn't that different from Sharepoint's.</h1>
+<p>Sharepoint has the same <em>functional components</em> as the Sherman CMS, but they bundled together into a monolithic system.</p>
+<div style="text-align:center">
+<img src="img/created/sharepoint-cma-cr-cda-600x325.png" />
+</div>
+
+</div>
+<div class="section slide level1" id="but-it-is-more-flexible.">
+<h1>...but it is more flexible.</h1>
+<p>By partioning the CMS into independent services that interoperate across standard APIs, there are a lot more choices to be made about Sherman's implementation.</p>
+<div style="text-align:center">
+<img src="img/created/qqq-cma-cr-cda-600x169.png" />
+</div>
+
+</div>
+<div class="section slide level1" id="shermans-technology-stack-cma">
+<h1>Sherman's Technology Stack: CMA</h1>
+<ul>
+<li><p><em>Rails</em> application running on the <em>Ruby</em> platform.</p></li>
+<li><p>Backed by a <em>Neo4J</em> datastore..</p></li>
+</ul>
+<h3>Rationale?</h3>
+<ul>
+<li>Ruby-on-Rails is a popular and powerful tool for rapidly developing web forms.</li>
+<li>Neo4J is optimized to represent dynamic and highly-interconnected data while retaining fully transactional, enterprise-strength ACID reliabilty and data integrity.</li>
+</ul>
+</div>
+<div class="section slide level1" id="shermans-technology-stack-cr">
+<h1>Sherman's Technology Stack: CR</h1>
+<ul>
+<li><em>Riak</em>, a document-oriented key-value store.</li>
+<li>Documents stored in a semantic structure based on <em>Dublin Core meta-data and conventional &quot;microformats&quot;</em></li>
+</ul>
+<h3>Rationale?</h3>
+<ul>
+<li>Riak is a high-performance, high-availablity, cloud-ready, easily-managed. distributed database.</li>
+<li>Microformats standardize common meta-data structures for broad interoperabilty.</li>
+</ul>
+</div>
+<div class="section slide level1" id="shermans-technology-stack-cda">
+<h1>Sherman's Technology Stack: CDA</h1>
+<ul>
+<li><em>Dust.js</em> templating enging running on <em>Node.js/CoffeeScript</em> platform.</li>
+<li>Exposing content via HTML5, JSON and other interfaces.</li>
+</ul>
+<h3>Rationale?</h3>
+<ul>
+<li>Consistent use of JavaScript allows display engine to run on server, in a web browser or on a mobile device.</li>
+<li>Also provides web designers and &quot;front-end&quot; engineers with more autonomy. The skills developed using client-side JavaScript and ActionScript (Flash) can now be leverged for server-side and mobile development.</li>
+</ul>
+</div>
+<div class="section slide level1" id="build-vs.-buy">
+<h1>Build vs. Buy?</h1>
+<p>This starts to look like a build-versus-buy scenario.</p>
+<div style="text-align:center">
+<img src="img/created/sharepoint-vs-qqq-600x455.png" />
+</div>
+
+<p>Is this a custom CMS? Is that more work? Is that more risk? Wouldn't it be better to get an off-the-shelf CMS?</p>
+</div>
+<div class="section slide level1" id="build-vs.-buy-1">
+<h1>Build vs. Buy?</h1>
+<p>SHRM, like any organization that produces content at a large scale, has sophsticated and specialized needs.</p>
+<div style="text-align:center">
+<img src="img/created/sharepoint-customization-800x250.png" />
+</div>
+
+<p>Even an off-the-shelf CMS such as Sharepoint requires substantial customization to fit into our environment.</p>
+</div>
+<div class="section slide level1" id="build-vs.-buy-2">
+<h1>Build vs. Buy?</h1>
+<p>A closer analysis suggests that Sherman doesn't require much more customization than our existing implementation.</p>
+<div style="text-align:center">
+<img src="img/created/detailed-build-vs-buy-comparision-800x451.png" />
+</div>
+
+</div>
+<div class="section slide level1" id="implementation-plan">
+<h1>Implementation Plan</h1>
+<p>Sherman modular architure allows flexible deployment/roll-out:</p>
+<ul>
+<li><p>As a complete and fully independent application.</p></li>
+<li><p>By connecting Sherman's Content Management inteface to Sharepoint's Cntent Repository.</p></li>
+<li><p>By connecting Sherman's Content Display inteface to Sharepoint's Cntent Repository.</p></li>
+<li><p>Arbitrary combinations of the above.</p></li>
+</ul>
+</div>
+<div class="section slide level1" id="implementation-plan-cont.">
+<h1>Implementation Plan (Cont.)</h1>
+<p>Leverages Sherman's modularity to perform a phased/incremental delivery.</p>
+<p>Currently working on two major milestones:</p>
+<ol style="list-style-type: decimal">
+<li><p>HR News CMA. [August]</p></li>
+<li><p>Mobile SHRM Online (Homepage) [October]</p></li>
+</ol>
+</div>
+<div class="section slide level1" id="technology-platform">
+<h1>Technology Platform</h1>
+<center>
+<img src="img/created/sherman-3.png" />
+</center>
+
+</div>
+<div class="section slide level1" id="content-management-applications">
+<h1>Content Management Application(s)</h1>
+<center>
+<img src="img/created/sherman-4.png" />
+</center>
+
+<p>(<a href="http://cma.shrm.org/">demo</a>)</p>
+</div>
+<div class="section slide level1" id="content-management-applications-1">
+<h1>Content Management Application(s)</h1>
+<center>
+<img src="img/created/cma-screenshot-1-900x492.png" />
+</center>
+
+
+<p>(Note: Old screenshots. See demo for updated version.)</p>
+</div>
+<div class="section slide level1" id="content-management-applications-2">
+<h1>Content Management Application(s)</h1>
+<center>
+<img src="img/created/cma-screenshot-2-900x492.png" />
+</center>
+
+</div>
+<div class="section slide level1" id="content-management-applications-3">
+<h1>Content Management Application(s)</h1>
+<center>
+<img src="img/created/cma-screenshot-3-900x492.png" />
+</center>
+
+</div>
+<div class="section slide level1" id="content-management-applications-4">
+<h1>Content Management Application(s)</h1>
+<center>
+<img src="img/created/cma-screenshot-4-900x492.png" />
+</center>
+
+</div>
+<div class="section slide level1" id="content-repository">
+<h1>Content Repository</h1>
+<center>
+<img src="img/created/cr.png" />
+</center>
+
+</div>
+<div class="section slide level1" id="content-display-application">
+<h1>Content Display Application</h1>
+<center>
+<img src="img/created/cda.png" />
+</center>
+
+<p>(<a href="http://cda.shrm.org/">demo</a>)</p>
+</div>
+<div class="section slide level1" id="section">
+<h1></h1>
+<center>
+<img src="img/created/sherman-cms-overview-780x602.png" />
+</center>
+
+
+
+</div>
+<style>
+/* ALL SLIDES
+ ********************************************************************/
+#controls option { visibility: visible !important; } /* make the elements within the control drop-down visible */
+#controls #jumplist { visibility: visible !important; opacity: 0.15; }
+#controls #jumplist:hover { opacity: 1.0; }
+#controls #jumplist { -webkit-transition:opacity .25s ease-in-out;-moz-transition:opacity .25s ease-in-out;-o-transition:opacity .25s ease-in-out;transition:opacity .25s ease-in-out; }
+#currentSlide span { color: #9DA2AB; font-weight: normal !important; }
+div.slide h1 {
+  margin: 0 0 1em 0;
+  padding: 0 0 0.06125em 0;
+  text-align: right;
+  color: #9DA2AB;
+  font-size: 1.5em;
+}
+img { max-width: 780px; background: white; } /* constrain images and give 'em a white background even when transparent */
+ul,ol { margin-left: 2em; margin-right: 2em; }
+div.slide i, div.slide b, div.slide em, div.slide strong { color: #9DA2AB; }
+
+/* FOOTER
+ ********************************************************************/
+footer { height: 2em; } 
+div#footer h1 { visibility: hidden; } /* hide the date in the footer */
+
+/* TITLE SLIDE
+ ********************************************************************/
+div.titleslide h1 { text-align: center !important; }
+div.titleslide h2 { text-align:  right !important; } 
+div.titleslide h3 { text-align:  right !important; }
+div.slide:first-child { margin-top: 20%; } 
+
+</style>
+</div>
+</body>
+</html>
